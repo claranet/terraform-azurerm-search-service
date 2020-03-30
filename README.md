@@ -81,4 +81,3 @@ module "search-service" {
 ## Related documentation
 
 Azure search service: [docs.microsoft.com/en-us/rest/api/searchservice/](https://docs.microsoft.com/en-us/rest/api/searchservice/)
-
