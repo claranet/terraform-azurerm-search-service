@@ -34,6 +34,12 @@ variable "custom_name" {
   default     = ""
 }
 
+variable "name_prefix" {
+  description = "Optional prefix for the generated name"
+  type        = string
+  default     = ""
+}
+
 variable "extra_tags" {
   description = "Extra tags to set on each created resource."
   type        = map(string)
@@ -56,4 +62,42 @@ variable "partition_count" {
   type        = number
   default     = 1
   description = "Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index)."
+}
+
+#-------------
+# LOGGING
+variable "enable_logging" {
+  description = "Boolean flag to specify whether logging is enabled"
+  type        = bool
+  default     = true
+}
+
+variable "diag_settings_name" {
+  description = "Custom name for the diagnostic settings of Application Gateway."
+  type        = string
+  default     = ""
+}
+
+variable "logs_enable_metrics" {
+  description = "Boolean flag to specify whether collecting metrics is enabled"
+  type        = bool
+  default     = false
+}
+
+variable "logs_storage_retention" {
+  description = "Retention in days for logs on Storage Account"
+  type        = number
+  default     = 30
+}
+
+variable "logs_storage_account_id" {
+  description = "Storage Account id for logs"
+  type        = string
+  default     = null
+}
+
+variable "logs_log_analytics_workspace_id" {
+  description = "Log Analytics Workspace id for logs"
+  type        = string
+  default     = null
 }
