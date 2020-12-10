@@ -3,10 +3,6 @@
 
 This terraform module is designed to create an [Azure Search Service](https://www.terraform.io/docs/providers/azurerm/r/search_service.html)
 
-## Requirements
-
-* [AzureRM Terraform provider](https://www.terraform.io/docs/providers/azurerm/)
-
 ## Version compatibility
 
 | Module version    | Terraform version | AzureRM version |
@@ -49,6 +45,8 @@ module "search-service" {
   client_name         = var.client_name
   environment         = var.environment
   stack               = var.stack
+
+  logs_destinations_ids = [module.run-common.log_analytics_workspace_id]
 }
 ```
 
@@ -58,16 +56,11 @@ module "search-service" {
 |------|-------------|------|---------|:--------:|
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_name | Custom name for the Search Service. Should be suffixed by "-search". Generated if not set. | `string` | `""` | no |
-| diag\_settings\_name | Custom name for the diagnostic settings of Application Gateway. | `string` | `""` | no |
-| enable\_logging | Boolean flag to specify whether logging is enabled | `bool` | `true` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to set on each created resource. | `map(string)` | `{}` | no |
 | location | Azure location. | `string` | n/a | yes |
 | location\_short | Short string for Azure location. | `string` | n/a | yes |
-| logs\_enable\_metrics | Boolean flag to specify whether collecting metrics is enabled | `bool` | `false` | no |
-| logs\_log\_analytics\_workspace\_id | Log Analytics Workspace id for logs | `string` | `null` | no |
-| logs\_storage\_account\_id | Storage Account id for logs | `string` | `null` | no |
-| logs\_storage\_retention | Retention in days for logs on Storage Account | `number` | `30` | no |
+| logs\_destinations\_ids | List of destination resources IDs for logs diagnostic destination. Can be Storage Account, Log Analytics Workspace and Event Hub. No more than one of each can be set. | `list(string)` | n/a | yes |
 | name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
 | partition\_count | Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index). | `number` | `1` | no |
 | replica\_count | Instances of the search service, used primarily to load balance query operations. Each replica always hosts one copy of an index | `number` | `3` | no |

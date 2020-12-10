@@ -8,11 +8,6 @@ locals {
     join("-", [local.default_name, "search"])
   )
 
-  diag_settings_name = coalesce(
-    var.diag_settings_name,
-    join("-", [local.default_name, "diag-settings"]),
-  )
-
   default_tags = {
     env   = var.environment
     stack = var.stack

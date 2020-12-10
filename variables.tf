@@ -66,38 +66,8 @@ variable "partition_count" {
 
 #-------------
 # LOGGING
-variable "enable_logging" {
-  description = "Boolean flag to specify whether logging is enabled"
-  type        = bool
-  default     = true
-}
 
-variable "diag_settings_name" {
-  description = "Custom name for the diagnostic settings of Application Gateway."
-  type        = string
-  default     = ""
-}
-
-variable "logs_enable_metrics" {
-  description = "Boolean flag to specify whether collecting metrics is enabled"
-  type        = bool
-  default     = false
-}
-
-variable "logs_storage_retention" {
-  description = "Retention in days for logs on Storage Account"
-  type        = number
-  default     = 30
-}
-
-variable "logs_storage_account_id" {
-  description = "Storage Account id for logs"
-  type        = string
-  default     = null
-}
-
-variable "logs_log_analytics_workspace_id" {
-  description = "Log Analytics Workspace id for logs"
-  type        = string
-  default     = null
+variable "logs_destinations_ids" {
+  type        = list(string)
+  description = "List of destination resources IDs for logs diagnostic destination. Can be Storage Account, Log Analytics Workspace and Event Hub. No more than one of each can be set."
 }
