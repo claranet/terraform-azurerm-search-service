@@ -1,4 +1,4 @@
-# v2.0.1/v3.0.1 - Unreleased
+# v2.1.0/v3.1.0 - 2020-12-11
 
 Added
   * AZ-225: Azure Search - Add Diagnostics
