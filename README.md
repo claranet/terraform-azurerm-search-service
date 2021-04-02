@@ -1,7 +1,7 @@
-# Azure search service
+# Azure Cognitive Search
 [![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-orange.svg)](LICENSE) [![TF Registry](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/modules/claranet/search-service/azurerm/)
 
-This terraform module is designed to create an [Azure Search Service](https://www.terraform.io/docs/providers/azurerm/r/search_service.html)
+This Terraform module is designed to create an [Azure Cognitive Search](https://docs.microsoft.com/en-us/azure/search/) service.
 
 ## Version compatibility
 
@@ -55,6 +55,7 @@ module "search-service" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| allowed\_ips | List of IPs or CIDRs to allow for service access | `list(string)` | `[]` | no |
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_name | Custom name for the Search Service. Should be suffixed by "-search". Generated if not set. | `string` | `""` | no |
 | environment | Project environment | `string` | n/a | yes |
@@ -64,6 +65,7 @@ module "search-service" {
 | logs\_destinations\_ids | List of destination resources IDs for logs diagnostic destination. Can be Storage Account, Log Analytics Workspace and Event Hub. No more than one of each can be set. | `list(string)` | n/a | yes |
 | name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
 | partition\_count | Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index). | `number` | `1` | no |
+| public\_network\_access\_enabled | Whether or not public network access is allowed for this resource. | `bool` | `true` | no |
 | replica\_count | Instances of the search service, used primarily to load balance query operations. Each replica always hosts one copy of an index | `number` | `3` | no |
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
 | sku | The SKU which should be used for this Search Service. Possible values are `basic`, `free`, `standard`, `standard2` and `standard3`. | `string` | `"standard"` | no |
@@ -74,6 +76,7 @@ module "search-service" {
 | Name | Description |
 |------|-------------|
 | search\_service\_id | The ID of the Search Service. |
+| search\_service\_identity\_principal\_id | Service principal ID for the Search Service identity |
 | search\_service\_primary\_key | The Primary Key used for Search Service Administration. |
 | search\_service\_query\_keys | A query\_keys block. |
 | search\_service\_secondary\_key | The Secondary Key used for Search Service Administration. |
@@ -81,4 +84,6 @@ module "search-service" {
 
 ## Related documentation
 
-Azure search service: [docs.microsoft.com/en-us/rest/api/searchservice/](https://docs.microsoft.com/en-us/rest/api/searchservice/)
+Azure Cognitive Search service: [docs.microsoft.com/en-us/azure/search/](https://docs.microsoft.com/en-us/azure/search/)
+
+Terraform resource: [registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service)

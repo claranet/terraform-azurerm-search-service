@@ -1,3 +1,9 @@
+# Unreleased
+
+Added:
+  * AZ-476: Assign a system identity
+  * AZ-476: IP whitelisting
+
 # v2.1.1/v3.1.1/v4.0.0 - 2020-12-14
 
 Updated
