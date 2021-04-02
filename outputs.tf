@@ -22,3 +22,8 @@ output "search_service_url" {
   description = "URL of the Search Service."
   value       = "https://${local.search_name}.search.windows.net"
 }
+
+output "search_service_identity_principal_id" {
+  description = "Service principal ID for the Search Service identity"
+  value       = azurerm_search_service.search_service.identity[0].principal_id
+}

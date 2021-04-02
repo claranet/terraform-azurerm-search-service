@@ -71,3 +71,15 @@ variable "logs_destinations_ids" {
   type        = list(string)
   description = "List of destination resources IDs for logs diagnostic destination. Can be Storage Account, Log Analytics Workspace and Event Hub. No more than one of each can be set."
 }
+
+variable "allowed_ips" {
+  type        = list(string)
+  description = "List of IPs or CIDRs to allow for service access"
+  default     = []
+}
+
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "Whether or not public network access is allowed for this resource."
+  default     = true
+}
