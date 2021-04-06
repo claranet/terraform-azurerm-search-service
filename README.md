@@ -3,6 +3,11 @@
 
 This Terraform module is designed to create an [Azure Cognitive Search](https://docs.microsoft.com/en-us/azure/search/) service.
 
+## Limitations
+
+Due to the lack of native Terraform implementation for managing query keys, destroy operation is not supported and 
+Terraform state needs to be refreshed after any query key modification to keep it up-to-date. 
+
 ## Version compatibility
 
 | Module version | Terraform version | AzureRM version |
@@ -66,6 +71,7 @@ module "search-service" {
 | name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
 | partition\_count | Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index). | `number` | `1` | no |
 | public\_network\_access\_enabled | Whether or not public network access is allowed for this resource. | `bool` | `true` | no |
+| query\_keys | Names of the query keys to create | `list(string)` | `[]` | no |
 | replica\_count | Instances of the search service, used primarily to load balance query operations. Each replica always hosts one copy of an index | `number` | `3` | no |
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
 | sku | The SKU which should be used for this Search Service. Possible values are `basic`, `free`, `standard`, `standard2` and `standard3`. | `string` | `"standard"` | no |
@@ -77,8 +83,10 @@ module "search-service" {
 |------|-------------|
 | search\_service\_id | The ID of the Search Service. |
 | search\_service\_identity\_principal\_id | Service principal ID for the Search Service identity |
+| search\_service\_name | The name of the Search Service. |
 | search\_service\_primary\_key | The Primary Key used for Search Service Administration. |
-| search\_service\_query\_keys | A query\_keys block. |
+| search\_service\_query\_keys | Query keys |
+| search\_service\_query\_keys\_map | Query keys, returned as a map with array of values. |
 | search\_service\_secondary\_key | The Secondary Key used for Search Service Administration. |
 | search\_service\_url | URL of the Search Service. |
 

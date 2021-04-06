@@ -3,6 +3,11 @@ output "search_service_id" {
   value       = azurerm_search_service.search_service.id
 }
 
+output "search_service_name" {
+  description = "The name of the Search Service."
+  value       = azurerm_search_service.search_service.name
+}
+
 output "search_service_primary_key" {
   description = "The Primary Key used for Search Service Administration."
   value       = azurerm_search_service.search_service.primary_key
@@ -14,8 +19,13 @@ output "search_service_secondary_key" {
 }
 
 output "search_service_query_keys" {
-  description = "A query_keys block."
+  description = "Query keys"
   value       = azurerm_search_service.search_service.query_keys
+}
+
+output "search_service_query_keys_map" {
+  description = "Query keys, returned as a map with array of values."
+  value       = { for e in azurerm_search_service.search_service.query_keys : e.name => e.key... }
 }
 
 output "search_service_url" {

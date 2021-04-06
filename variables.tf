@@ -83,3 +83,9 @@ variable "public_network_access_enabled" {
   description = "Whether or not public network access is allowed for this resource."
   default     = true
 }
+
+variable "query_keys" {
+  description = "Names of the query keys to create"
+  type        = list(string)
+  default     = []
+}
