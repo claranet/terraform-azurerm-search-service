@@ -10,7 +10,7 @@ Added
 
 # v4.1.0 - 2021-04-02
 
-Added:
+Added
   * AZ-476: Assign a system identity
   * AZ-476: IP whitelisting
 
