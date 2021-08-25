@@ -11,7 +11,8 @@ Terraform state needs to be refreshed after any query key modification to keep i
 ## Version compatibility
 
 | Module version | Terraform version | AzureRM version |
-|----------------|-------------------| --------------- |
+| -------------- | ----------------- | --------------- |
+| >= 5.x.x       | 0.15.x & 1.0.x    | >= 2.0          |
 | >= 4.x.x       | 0.13.x            | >= 2.0          |
 | >= 3.x.x       | 0.12.x            | >= 2.0          |
 | >= 2.x.x       | 0.12.x            | < 2.0           |
@@ -56,6 +57,27 @@ module "search-service" {
 }
 ```
 
+<!-- BEGIN_TF_DOCS -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | >= 2.38 |
+| null | n/a |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| logging | claranet/diagnostic-settings/azurerm | 4.0.1 |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_search_service.search_service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) | resource |
+| [null_resource.query_key](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -89,9 +111,7 @@ module "search-service" {
 | search\_service\_query\_keys\_map | Query keys, returned as a map with array of values. |
 | search\_service\_secondary\_key | The Secondary Key used for Search Service Administration. |
 | search\_service\_url | URL of the Search Service. |
-
+<!-- END_TF_DOCS -->
 ## Related documentation
 
 Azure Cognitive Search service: [docs.microsoft.com/en-us/azure/search/](https://docs.microsoft.com/en-us/azure/search/)
-
-Terraform resource: [registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service)
