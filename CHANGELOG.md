@@ -1,11 +1,16 @@
+# v4.2.1 - unrelased
+
+Changed
+  * AZ-532: Revamp README with latest `terraform-docs` tool
+
 # v4.2.0 - 2021-04-15
 
-Added:
+Added
   * AZ-477: Query keys creation
 
 # v4.1.0 - 2021-04-02
 
-Added:
+Added
   * AZ-476: Assign a system identity
   * AZ-476: IP whitelisting
 
