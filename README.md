@@ -82,7 +82,7 @@ module "search_service" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| logging | claranet/diagnostic-settings/azurerm | 4.0.1 |
+| logging | claranet/diagnostic-settings/azurerm | 4.0.3 |
 
 ## Resources
 
