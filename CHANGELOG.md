@@ -1,5 +1,8 @@
 # Unreleased
 
+Added
+  * AZ-615: Add an option to enable or disable default tags
+
 Fixed
   * AZ-589: Avoid plan drift when specifying Diagnostic Settings categories
 

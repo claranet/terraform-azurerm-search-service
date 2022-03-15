@@ -98,6 +98,7 @@ module "search_service" {
 | allowed\_ips | List of IPs or CIDRs to allow for service access | `list(string)` | `[]` | no |
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_name | Custom name for the Search Service. Should be suffixed by "-search". Generated if not set. | `string` | `""` | no |
+| default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to set on each created resource. | `map(string)` | `{}` | no |
 | location | Azure location. | `string` | n/a | yes |
