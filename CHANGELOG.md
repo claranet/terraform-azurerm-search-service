@@ -1,5 +1,11 @@
 # Unreleased
 
+Added
+  * AZ-615: Add an option to enable or disable default tags
+
+Changed
+  * AZ-589: Bump `diagnostics` module to latest `v5.0.0`
+
 Fixed
   * AZ-589: Avoid plan drift when specifying Diagnostic Settings categories
 

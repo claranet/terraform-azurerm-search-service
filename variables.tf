@@ -40,12 +40,6 @@ variable "name_prefix" {
   default     = ""
 }
 
-variable "extra_tags" {
-  description = "Extra tags to set on each created resource."
-  type        = map(string)
-  default     = {}
-}
-
 variable "sku" {
   type        = string
   default     = "standard"
@@ -62,14 +56,6 @@ variable "partition_count" {
   type        = number
   default     = 1
   description = "Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index)."
-}
-
-#-------------
-# LOGGING
-
-variable "logs_destinations_ids" {
-  type        = list(string)
-  description = "List of destination resources IDs for logs diagnostic destination. Can be Storage Account, Log Analytics Workspace and Event Hub. No more than one of each can be set."
 }
 
 variable "allowed_ips" {
