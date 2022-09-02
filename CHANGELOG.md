@@ -1,4 +1,4 @@
-# Next version
+# v4.4.0 - 2022-09-02
 
 Added
   * AZ-802: Add timeouts option
