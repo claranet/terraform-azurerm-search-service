@@ -13,5 +13,15 @@ resource "azurerm_search_service" "search_service" {
     type = "SystemAssigned"
   }
 
+  dynamic "timeouts" {
+    for_each = var.terraform_timeouts != null ? ["enabled"] : []
+    content {
+      create = lookup(var.terraform_timeouts, "create", null)
+      read   = lookup(var.terraform_timeouts, "read", null)
+      update = lookup(var.terraform_timeouts, "update", null)
+      delete = lookup(var.terraform_timeouts, "delete", null)
+    }
+  }
+
   tags = merge(local.default_tags, var.extra_tags)
 }

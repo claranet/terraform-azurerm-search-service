@@ -116,6 +116,7 @@ module "search_service" {
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
 | sku | The SKU which should be used for this Search Service. Possible values are `basic`, `free`, `standard`, `standard2` and `standard3`. | `string` | `"standard"` | no |
 | stack | Project stack name | `string` | n/a | yes |
+| terraform\_timeouts | (Optional) Allows to specify timeouts for certain Terraform actions (create, read, update, delete) | <pre>object({<br>    create = optional(string),<br>    read   = optional(string),<br>    update = optional(string),<br>    delete = optional(string)<br>  })</pre> | `null` | no |
 
 ## Outputs
 
