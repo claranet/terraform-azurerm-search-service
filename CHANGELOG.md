@@ -1,3 +1,8 @@
+# Unreleased
+
+Breaking
+  * AZ-840: Update to Terraform `v1.3`
+
 # v4.4.0 - 2022-09-02
 
 Added
