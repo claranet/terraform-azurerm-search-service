@@ -76,7 +76,7 @@ module "search_service" {
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 2.38 |
+| azurerm | ~> 3.0 |
 | null | >= 3.0 |
 
 ## Modules
