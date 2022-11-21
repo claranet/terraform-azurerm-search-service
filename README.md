@@ -76,14 +76,15 @@ module "search_service" {
 
 | Name | Version |
 |------|---------|
-| azurerm | ~> 3.0 |
+| azurecaf | ~> 1.2, >= 1.2.22 |
+| azurerm | ~> 3.22 |
 | null | >= 3.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| logging | claranet/diagnostic-settings/azurerm | 5.0.0 |
+| logging | claranet/diagnostic-settings/azurerm | 6.1.0 |
 
 ## Resources
 
@@ -91,6 +92,7 @@ module "search_service" {
 |------|------|
 | [azurerm_search_service.search_service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) | resource |
 | [null_resource.query_key](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [azurecaf_name.search](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/data-sources/name) | data source |
 
 ## Inputs
 
@@ -99,7 +101,7 @@ module "search_service" {
 | allowed\_ips | List of IPs or CIDRs to allow for service access | `list(string)` | `[]` | no |
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_diagnostic\_settings\_name | Custom name of the diagnostics settings, name will be 'default' if not set. | `string` | `"default"` | no |
-| custom\_name | Custom name for the Search Service. Should be suffixed by "-search". Generated if not set. | `string` | `""` | no |
+| custom\_name | Custom name for the Search Service. Generated if not set. | `string` | `""` | no |
 | default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to set on each created resource. | `map(string)` | `{}` | no |
@@ -110,6 +112,7 @@ module "search_service" {
 | logs\_metrics\_categories | Metrics categories to send to destinations. | `list(string)` | `null` | no |
 | logs\_retention\_days | Number of days to keep logs on storage account. | `number` | `30` | no |
 | name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
+| name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
 | partition\_count | Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index). | `number` | `1` | no |
 | public\_network\_access\_enabled | Whether or not public network access is allowed for this resource. | `bool` | `true` | no |
 | query\_keys | Names of the query keys to create | `list(string)` | `[]` | no |
@@ -117,7 +120,8 @@ module "search_service" {
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
 | sku | The SKU which should be used for this Search Service. Possible values are `basic`, `free`, `standard`, `standard2` and `standard3`. | `string` | `"standard"` | no |
 | stack | Project stack name | `string` | n/a | yes |
-| terraform\_timeouts | (Optional) Allows to specify timeouts for certain Terraform actions (create, read, update, delete) | <pre>object({<br>    create = optional(string),<br>    read   = optional(string),<br>    update = optional(string),<br>    delete = optional(string)<br>  })</pre> | `null` | no |
+| terraform\_timeouts | (Optional) Allows to specify timeouts for certain Terraform actions (create, read, update, delete). | <pre>object({<br>    create = optional(string)<br>    read   = optional(string)<br>    update = optional(string)<br>    delete = optional(string)<br>  })</pre> | `null` | no |
+| use\_caf\_naming | Use the Azure CAF naming provider to generate default resource name. `custom_name` override this if set. Legacy default name is used if this is set to `false`. | `bool` | `true` | no |
 
 ## Outputs
 
