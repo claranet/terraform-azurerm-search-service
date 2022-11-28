@@ -28,18 +28,6 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "custom_name" {
-  description = "Custom name for the Search Service. Should be suffixed by \"-search\". Generated if not set."
-  type        = string
-  default     = ""
-}
-
-variable "name_prefix" {
-  description = "Optional prefix for the generated name"
-  type        = string
-  default     = ""
-}
-
 variable "sku" {
   type        = string
   default     = "standard"

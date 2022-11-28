@@ -16,10 +16,10 @@ resource "azurerm_search_service" "search_service" {
   dynamic "timeouts" {
     for_each = var.terraform_timeouts != null ? ["enabled"] : []
     content {
-      create = lookup(var.terraform_timeouts, "create", null)
-      read   = lookup(var.terraform_timeouts, "read", null)
-      update = lookup(var.terraform_timeouts, "update", null)
-      delete = lookup(var.terraform_timeouts, "delete", null)
+      create = var.terraform_timeouts.create
+      read   = var.terraform_timeouts.read
+      update = var.terraform_timeouts.update
+      delete = var.terraform_timeouts.delete
     }
   }
 
