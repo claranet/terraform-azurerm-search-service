@@ -91,7 +91,7 @@ module "search_service" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| logging | claranet/diagnostic-settings/azurerm | 6.2.0 |
+| logging | claranet/diagnostic-settings/azurerm | ~> 6.4.1 |
 
 ## Resources
 
