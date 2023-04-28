@@ -84,8 +84,8 @@ module "search_service" {
 | Name | Version |
 |------|---------|
 | azurecaf | ~> 1.2, >= 1.2.22 |
-| azurerm | ~> 3.22 |
-| null | >= 3.0 |
+| azurerm | ~> 3.39 |
+| null | ~> 3.0 |
 
 ## Modules
 
