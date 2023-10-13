@@ -1,3 +1,8 @@
+# Unreleased
+
+Added
+  * AZ-1170: Add `authentication_failure_mode`, `ad_authentication_enabled` and `local_authentication_enabled` variables
+
 # v7.1.0 - 2022-11-28
 
 Breaking
