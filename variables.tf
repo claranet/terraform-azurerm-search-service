@@ -63,3 +63,28 @@ variable "query_keys" {
   type        = list(string)
   default     = []
 }
+
+variable "authentication_failure_mode" {
+  description = "Specifies the response that the Search Service should return for requests that fail authentication (possible values are `null`, `http401WithBearerChallenge` or `http403`)"
+  type        = string
+  default     = "http401WithBearerChallenge"
+  validation {
+    condition     = var.authentication_failure_mode == null || contains(["http401WithBearerChallenge", "http403"], try(var.authentication_failure_mode, ""))
+    error_message = "`authentication_failure_mode` variable must be either `null`, `http401WithBearerChallenge` or `http403`."
+  }
+}
+
+variable "ad_authentication_enabled" {
+  description = "Whether Azure Active Directory authentication is enabled."
+  type        = bool
+  default     = false
+  nullable    = false
+}
+
+variable "local_authentication_enabled" {
+  description = "Whether API key authentication is enabled."
+
+  type     = bool
+  default  = true
+  nullable = false
+}

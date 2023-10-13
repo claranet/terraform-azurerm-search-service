@@ -23,5 +23,8 @@ resource "azurerm_search_service" "search_service" {
     }
   }
 
+  local_authentication_enabled = var.local_authentication_enabled
+  authentication_failure_mode  = !var.ad_authentication_enabled || (var.ad_authentication_enabled && !var.local_authentication_enabled) ? null : var.authentication_failure_mode
+
   tags = merge(local.default_tags, var.extra_tags)
 }

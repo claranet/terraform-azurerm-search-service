@@ -84,7 +84,7 @@ module "search_service" {
 | Name | Version |
 |------|---------|
 | azurecaf | ~> 1.2, >= 1.2.22 |
-| azurerm | ~> 3.39 |
+| azurerm | ~> 3.72 |
 | null | ~> 3.0 |
 
 ## Modules
@@ -105,13 +105,16 @@ module "search_service" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| ad\_authentication\_enabled | Whether Azure Active Directory authentication is enabled. | `bool` | `false` | no |
 | allowed\_ips | List of IPs or CIDRs to allow for service access | `list(string)` | `[]` | no |
+| authentication\_failure\_mode | Specifies the response that the Search Service should return for requests that fail authentication (possible values are `null`, `http401WithBearerChallenge` or `http403`) | `string` | `"http401WithBearerChallenge"` | no |
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_diagnostic\_settings\_name | Custom name of the diagnostics settings, name will be 'default' if not set. | `string` | `"default"` | no |
 | custom\_name | Custom name for the Search Service. Generated if not set. | `string` | `""` | no |
 | default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to set on each created resource. | `map(string)` | `{}` | no |
+| local\_authentication\_enabled | Whether API key authentication is enabled. | `bool` | `true` | no |
 | location | Azure location. | `string` | n/a | yes |
 | location\_short | Short string for Azure location. | `string` | n/a | yes |
 | logs\_categories | Log categories to send to destinations. | `list(string)` | `null` | no |
