@@ -1,3 +1,47 @@
+## 7.3.0 (2024-07-22)
+
+
+### Features
+
+* add semantic_search_sku 109e7b4
+
+
+### Continuous Integration
+
+* **AZ-1391:** enable semantic-release [skip ci] 8106fc9
+* **AZ-1391:** update semantic-release config [skip ci] 42a611d
+
+
+### Miscellaneous Chores
+
+* **deps:** add renovate.json 0c8f3aa
+* **deps:** enable automerge on renovate 7294585
+* **deps:** update dependency opentofu to v1.7.0 f1f16f7
+* **deps:** update dependency opentofu to v1.7.1 f654884
+* **deps:** update dependency opentofu to v1.7.2 277b085
+* **deps:** update dependency opentofu to v1.7.3 8e8982d
+* **deps:** update dependency pre-commit to v3.7.1 6e9459d
+* **deps:** update dependency terraform-docs to v0.18.0 18a4307
+* **deps:** update dependency tflint to v0.51.0 e73bf7f
+* **deps:** update dependency tflint to v0.51.1 f5a7ac7
+* **deps:** update dependency tflint to v0.51.2 f7d4874
+* **deps:** update dependency tflint to v0.52.0 d68cb54
+* **deps:** update dependency trivy to v0.50.2 3fd16ba
+* **deps:** update dependency trivy to v0.50.4 b76545a
+* **deps:** update dependency trivy to v0.51.0 a115378
+* **deps:** update dependency trivy to v0.51.1 6ad0fd0
+* **deps:** update dependency trivy to v0.51.2 7c3c243
+* **deps:** update dependency trivy to v0.51.4 f5ce1b6
+* **deps:** update dependency trivy to v0.52.0 3948f8e
+* **deps:** update dependency trivy to v0.52.1 8fa0f80
+* **deps:** update dependency trivy to v0.52.2 ef114e0
+* **deps:** update dependency trivy to v0.53.0 c339e96
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.92.0 d525d6f
+* **deps:** update renovate.json f31b572
+* **deps:** update terraform claranet/diagnostic-settings/azurerm to ~> 6.5.0 c1f834c
+* **pre-commit:** update commitlint hook c146e57
+* **release:** remove legacy `VERSION` file 583506b
+
 # v7.2.0 - 2023-10-13
 
 Added
