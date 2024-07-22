@@ -84,7 +84,7 @@ module "search_service" {
 | Name | Version |
 |------|---------|
 | azurecaf | ~> 1.2, >= 1.2.22 |
-| azurerm | ~> 3.72 |
+| azurerm | ~> 3.78 |
 | null | ~> 3.0 |
 
 ## Modules
@@ -127,6 +127,7 @@ module "search_service" {
 | query\_keys | Names of the query keys to create | `list(string)` | `[]` | no |
 | replica\_count | Instances of the search service, used primarily to load balance query operations. Each replica always hosts one copy of an index | `number` | `3` | no |
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
+| semantic\_search\_sku | Specifies the Semantic Search SKU which should be used for this Search Service. | `string` | `null` | no |
 | sku | The SKU which should be used for this Search Service. Possible values are `basic`, `free`, `standard`, `standard2` and `standard3`. | `string` | `"standard"` | no |
 | stack | Project stack name | `string` | n/a | yes |
 | terraform\_timeouts | (Optional) Allows to specify timeouts for certain Terraform actions (create, read, update, delete). | <pre>object({<br>    create = optional(string)<br>    read   = optional(string)<br>    update = optional(string)<br>    delete = optional(string)<br>  })</pre> | `null` | no |

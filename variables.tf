@@ -46,6 +46,12 @@ variable "partition_count" {
   description = "Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index)."
 }
 
+variable "semantic_search_sku" {
+  type        = string
+  default     = null
+  description = "Specifies the Semantic Search SKU which should be used for this Search Service."
+}
+
 variable "allowed_ips" {
   type        = list(string)
   description = "List of IPs or CIDRs to allow for service access"
