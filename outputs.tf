@@ -1,39 +1,50 @@
-output "search_service_id" {
+output "resource" {
+  description = "Search Service resource object."
+  value       = azurerm_search_service.main
+  sensitive   = true
+}
+
+output "module_diagnostics" {
+  description = "Diagnostics settings module outputs."
+  value       = module.diagnostics
+}
+
+output "id" {
   description = "The ID of the Search Service."
-  value       = azurerm_search_service.search_service.id
+  value       = azurerm_search_service.main.id
 }
 
-output "search_service_name" {
+output "name" {
   description = "The name of the Search Service."
-  value       = azurerm_search_service.search_service.name
+  value       = azurerm_search_service.main.name
 }
 
-output "search_service_primary_key" {
-  description = "The Primary Key used for Search Service Administration."
-  value       = azurerm_search_service.search_service.primary_key
+output "primary_key" {
+  description = "The primary key used for Search Service administration."
+  value       = azurerm_search_service.main.primary_key
 }
 
-output "search_service_secondary_key" {
-  description = "The Secondary Key used for Search Service Administration."
-  value       = azurerm_search_service.search_service.secondary_key
+output "secondary_key" {
+  description = "The secondary key used for Search Service administration."
+  value       = azurerm_search_service.main.secondary_key
 }
 
-output "search_service_query_keys" {
-  description = "Query keys"
-  value       = azurerm_search_service.search_service.query_keys
+output "query_keys" {
+  description = "Query keys."
+  value       = azurerm_search_service.main.query_keys
 }
 
-output "search_service_query_keys_map" {
+output "query_keys_map" {
   description = "Query keys, returned as a map with array of values."
-  value       = { for e in azurerm_search_service.search_service.query_keys : e.name => e.key... }
+  value       = { for e in azurerm_search_service.main.query_keys : e.name => e.key... }
 }
 
-output "search_service_url" {
+output "url" {
   description = "URL of the Search Service."
-  value       = "https://${local.search_name}.search.windows.net"
+  value       = "https://${azurerm_search_service.main.name}.search.windows.net"
 }
 
-output "search_service_identity_principal_id" {
-  description = "Service principal ID for the Search Service identity"
-  value       = azurerm_search_service.search_service.identity[0].principal_id
+output "identity_principal_id" {
+  description = "Service principal ID for the Search Service identity."
+  value       = one(azurerm_search_service.main.identity[*].principal_id)
 }

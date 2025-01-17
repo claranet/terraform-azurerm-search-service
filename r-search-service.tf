@@ -1,25 +1,26 @@
-resource "azurerm_search_service" "search_service" {
-  name                = local.search_name
+resource "azurerm_search_service" "main" {
+  name                = local.name
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = var.sku
-  replica_count       = var.replica_count
-  partition_count     = var.partition_count
 
-  allowed_ips                   = var.allowed_ips
+  replica_count   = var.sku != "free" ? var.replica_count : null
+  partition_count = var.sku != "free" ? var.partition_count : null
+
   public_network_access_enabled = var.public_network_access_enabled
+  allowed_ips                   = var.public_network_access_enabled ? var.allowed_ips : null
 
   identity {
     type = "SystemAssigned"
   }
 
   dynamic "timeouts" {
-    for_each = var.terraform_timeouts != null ? ["enabled"] : []
+    for_each = var.terraform_timeouts[*]
     content {
-      create = var.terraform_timeouts.create
-      read   = var.terraform_timeouts.read
-      update = var.terraform_timeouts.update
-      delete = var.terraform_timeouts.delete
+      create = timeouts.value.create
+      read   = timeouts.value.read
+      update = timeouts.value.update
+      delete = timeouts.value.delete
     }
   }
 
@@ -29,4 +30,9 @@ resource "azurerm_search_service" "search_service" {
   authentication_failure_mode  = !var.ad_authentication_enabled || (var.ad_authentication_enabled && !var.local_authentication_enabled) ? null : var.authentication_failure_mode
 
   tags = merge(local.default_tags, var.extra_tags)
+}
+
+moved {
+  from = azurerm_search_service.search_service
+  to   = azurerm_search_service.main
 }

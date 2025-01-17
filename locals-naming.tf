@@ -3,6 +3,5 @@ locals {
   name_prefix = lower(var.name_prefix)
   name_suffix = lower(var.name_suffix)
 
-
-  search_name = coalesce(var.custom_name, data.azurecaf_name.search.result)
+  name = coalesce(var.custom_name, data.azurecaf_name.search.result)
 }
