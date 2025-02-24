@@ -10,3 +10,8 @@ resource "terraform_data" "query_keys" {
     azurerm_search_service.main.id,
   ]
 }
+
+moved {
+  from = null_resource.query_key
+  to   = terraform_data.query_keys
+}
