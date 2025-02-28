@@ -1,3 +1,17 @@
+## 8.0.1 (2025-02-28)
+
+### Bug Fixes
+
+* **AZ-1530:** move block for query-keys 3d76c51
+
+### Miscellaneous Chores
+
+* **deps:** update dependency pre-commit to v4.1.0 0a323cb
+* **deps:** update dependency trivy to v0.59.1 1a6d8a1
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.21.0 1e8d27e
+* **deps:** update tools 699a0e6
+* update Github templates 01011f4
+
 ## 8.0.0 (2025-01-17)
 
 ### ⚠ BREAKING CHANGES
