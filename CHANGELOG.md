@@ -1,3 +1,13 @@
+## 8.0.2 (2025-03-07)
+
+### Miscellaneous Chores
+
+* **deps:** update dependency trivy to v0.60.0 9c7a255
+
+### Revert
+
+* **AZ-1530:** move block for query-keys c9a5fb2
+
 ## 8.0.1 (2025-02-28)
 
 ### Bug Fixes
