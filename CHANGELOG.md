@@ -1,3 +1,42 @@
+## 8.0.3 (2025-10-01)
+
+### Code Refactoring
+
+* **deps:** 🔗 update claranet/azurecaf to ~> 1.3.0 🔧 48dd807
+
+### Miscellaneous Chores
+
+* **⚙️:** ✏️ update template identifier for MR review 40cdac4
+* 🗑️ remove old commitlint configuration files cd9b7c7
+* **deps:** 🔗 bump AzureRM provider version to v4.31+ a8f793e
+* **deps:** update dependency claranet/diagnostic-settings/azurerm to ~> 8.1.0 4fff38a
+* **deps:** update dependency opentofu to v1.10.0 1e3c33a
+* **deps:** update dependency opentofu to v1.10.1 6d4490a
+* **deps:** update dependency opentofu to v1.10.3 963f0b3
+* **deps:** update dependency opentofu to v1.10.6 b4056d7
+* **deps:** update dependency opentofu to v1.9.1 b5340c3
+* **deps:** update dependency pre-commit to v4.2.0 6e2ff9c
+* **deps:** update dependency terraform-docs to v0.20.0 d4d1d77
+* **deps:** update dependency tflint to v0.57.0 8bb8ada
+* **deps:** update dependency tflint to v0.58.0 78e6e61
+* **deps:** update dependency tflint to v0.58.1 36fa0a5
+* **deps:** update dependency tflint to v0.59.1 2cdc793
+* **deps:** update dependency trivy to v0.61.1 43f4739
+* **deps:** update dependency trivy to v0.62.0 f753137
+* **deps:** update dependency trivy to v0.62.1 35c9449
+* **deps:** update dependency trivy to v0.63.0 635702c
+* **deps:** update dependency trivy to v0.66.0 d1a54f5
+* **deps:** update dependency trivy to v0.67.0 69209bf
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.22.0 ba20ac2
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v6 e538fae
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.0 fea27cb
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.1 61f4158
+* **deps:** update terraform claranet/diagnostic-settings/azurerm to ~> 8.2.0 bd38ccb
+* **deps:** update tools 895ca10
+* **deps:** update tools 257a396
+* **deps:** update tools ae2c282
+* **deps:** update tools 86960b1
+
 ## 8.0.2 (2025-03-07)
 
 ### Miscellaneous Chores
