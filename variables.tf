@@ -65,6 +65,13 @@ variable "public_network_access_enabled" {
   default     = true
 }
 
+variable "network_rule_bypass_option" {
+  description = "Specifies the network rule bypass option. Possible values are `AzureServices` or `None`."
+  type        = string
+  default     = "None"
+  nullable    = false
+}
+
 variable "query_keys" {
   description = "Names of the query keys to create."
   type        = list(string)

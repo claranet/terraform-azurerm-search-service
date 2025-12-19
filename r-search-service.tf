@@ -9,6 +9,7 @@ resource "azurerm_search_service" "main" {
 
   public_network_access_enabled = var.public_network_access_enabled
   allowed_ips                   = var.public_network_access_enabled ? var.allowed_ips : null
+  network_rule_bypass_option    = var.network_rule_bypass_option
 
   identity {
     type = "SystemAssigned"
