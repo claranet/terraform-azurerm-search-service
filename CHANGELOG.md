@@ -1,3 +1,28 @@
+## 8.1.0 (2026-01-16)
+
+### Features
+
+* **AZ-1627:** Add network_rule_bypass_option variable 1129bb0
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.10.7 6a6cffa
+* **deps:** update dependency opentofu to v1.11.2 636e824
+* **deps:** update dependency opentofu to v1.11.3 8c296e4
+* **deps:** update dependency pre-commit to v4.4.0 fe34758
+* **deps:** update dependency pre-commit to v4.5.0 5a1fdcb
+* **deps:** update dependency pre-commit to v4.5.1 bdcb55e
+* **deps:** update dependency tflint to v0.60.0 c6cccfa
+* **deps:** update dependency trivy to v0.67.1 7703f6d
+* **deps:** update dependency trivy to v0.67.2 91c1f8d
+* **deps:** update dependency trivy to v0.68.1 c5e89b1
+* **deps:** update dependency trivy to v0.68.2 26a47ea
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.10 0db1309
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.8 432a004
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.9 f8f15d6
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.2 26aeedb
+* **deps:** update tools 42b6abe
+
 ## 8.0.3 (2025-10-01)
 
 ### Code Refactoring
