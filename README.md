@@ -98,6 +98,7 @@ module "search_service" {
 | logs\_metrics\_categories | Metrics categories to send to destinations. | `list(string)` | `null` | no |
 | name\_prefix | Optional prefix for the generated name. | `string` | `""` | no |
 | name\_suffix | Optional suffix for the generated name. | `string` | `""` | no |
+| network\_rule\_bypass\_option | Specifies the network rule bypass option. Possible values are `AzureServices` or `None`. | `string` | `"None"` | no |
 | partition\_count | Provides index storage and I/O for read/write operations (for example, when rebuilding or refreshing an index). | `number` | `1` | no |
 | public\_network\_access\_enabled | Whether or not public network access is allowed for this resource. | `bool` | `true` | no |
 | query\_keys | Names of the query keys to create. | `list(string)` | `[]` | no |
