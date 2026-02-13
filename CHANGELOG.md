@@ -1,3 +1,17 @@
+## 8.1.1 (2026-02-13)
+
+### Code Refactoring
+
+* **gitlab MR template:** ♻️ update default reviewers group with Azure Factory 🔧 48a200f
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.11.4 5c3f455
+* **deps:** update dependency opentofu to v1.11.5 267c46f
+* **deps:** update dependency tflint to v0.61.0 a88b4f7
+* **deps:** update dependency trivy to v0.69.0 e750857
+* **deps:** update dependency trivy to v0.69.1 6aecb6f
+
 ## 8.1.0 (2026-01-16)
 
 ### Features
