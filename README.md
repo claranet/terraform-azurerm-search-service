@@ -58,7 +58,7 @@ module "search_service" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azurecaf | >= 1.2.28 |
 | azurerm | ~> 4.31 |
 | terraform | n/a |
@@ -66,13 +66,13 @@ module "search_service" {
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | diagnostics | claranet/diagnostic-settings/azurerm | ~> 8.2.0 |
 
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [azurerm_search_service.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service) | resource |
 | [terraform_data.query_keys](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [azurecaf_name.search](https://registry.terraform.io/providers/claranet/azurecaf/latest/docs/data-sources/name) | data source |
@@ -80,7 +80,7 @@ module "search_service" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | ad\_authentication\_enabled | Whether Azure Active Directory authentication is enabled. | `bool` | `false` | no |
 | allowed\_ips | List of IPs or CIDRs to allow for service access. | `list(string)` | `null` | no |
 | authentication\_failure\_mode | Specifies the response that the Search Service should return for requests that fail authentication (possible values are `null`, `http401WithBearerChallenge` or `http403`) | `string` | `"http401WithBearerChallenge"` | no |
@@ -112,7 +112,7 @@ module "search_service" {
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | id | The ID of the Search Service. |
 | identity\_principal\_id | Service principal ID for the Search Service identity. |
 | module\_diagnostics | Diagnostics settings module outputs. |
