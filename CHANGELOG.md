@@ -1,3 +1,18 @@
+## 8.1.3 (2026-06-05)
+
+### Bug Fixes
+
+* **outputs:** mark search service admin keys as sensitive 07fadcb
+
+### Miscellaneous Chores
+
+* **deps:** 🔗 update mise conf for OpenTofu 51bb8d0
+* **deps:** update dependency terraform-docs to v0.23.0 35becd9
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.3.0 6c2ea02
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.4.0 b0fe2b4
+* **pre-commit:** 🔧 move to prek 2211938
+* **tfdocs:** bump tfdocs to v0.22 🔧 a35372e
+
 ## 8.1.2 (2026-03-27)
 
 ### Bug Fixes
