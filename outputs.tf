@@ -22,11 +22,13 @@ output "name" {
 output "primary_key" {
   description = "The primary key used for Search Service administration."
   value       = azurerm_search_service.main.primary_key
+  sensitive   = true
 }
 
 output "secondary_key" {
   description = "The secondary key used for Search Service administration."
   value       = azurerm_search_service.main.secondary_key
+  sensitive   = true
 }
 
 output "query_keys" {
